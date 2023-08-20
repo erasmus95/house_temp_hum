@@ -1,0 +1,16 @@
+[Unit]
+Description=Pull the tempsensors repo for changes
+
+[Service]
+WorkingDirectory=/home/pi/GitHub/tempsensors/
+ExecStart=/home/pi/GitHub/tempsensors/tempsensor_pull.sh
+
+Restart=always
+RestartSec=10
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=autodeploy
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Update the pi
+
+[Service]
+WorkingDirectory=/home/pi/GitHub/tempsensors/
+ExecStart=/home/pi/GitHub/tempsensors/update.sh
+
+Restart=always
+RestartSec=10
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=autodeploy
+
+[Install]
+WantedBy=multi-user.target

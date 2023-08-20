@@ -1,0 +1,8 @@
+[Unit]
+Description=Run my script every 5 minutes
+
+[Timer]
+OnCalendar= 5 m
+
+[Install]
+WantedBy=timers.target

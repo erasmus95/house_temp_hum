@@ -1,0 +1,14 @@
+[Unit]
+Description=Run the tempsensor
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/GitHub/tempsensors/
+ExecStart=sudo python3 /home/pi/GitHub/tempsensors/tempsensor.py
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=autodeploy
+
+[Install]
+WantedBy=multi-user.target
